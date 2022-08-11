@@ -2,8 +2,10 @@ server:
   port: 8086
 spring:
   data:
-#    mongodb:
-##      uri: mongodb://127.0.0.1/teste
-#      database: teste
-#      port: '27017'
-#      host: localhost
+    mongodb:
+      database: mongo-mkt
+      port: 27017
+      host: localhost
+      authentication-database: admin
+      username: mkt-usuario
+      password: mkt-senha

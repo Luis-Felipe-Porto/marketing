@@ -7,5 +7,4 @@ public interface LeadRepository extends MongoRepository<Lead,String> {
 
     Lead findByEmail(String email);
 
-
 }
