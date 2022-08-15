@@ -9,3 +9,8 @@ spring:
       authentication-database: admin
       username: mkt-usuario
       password: mkt-senha
+  rabbitmq:
+    host: localhost
+    port: 5672
+    password: admin
+    username: admin

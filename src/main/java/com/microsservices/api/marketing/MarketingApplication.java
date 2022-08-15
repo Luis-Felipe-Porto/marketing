@@ -15,15 +15,15 @@ public class MarketingApplication {
         SpringApplication.run(MarketingApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner commandLineRunner (LeadRepository leadRepository){
-        return args -> {
-            Lead lead = new Lead(
-                    "Felipe",
-                    "luis.felipe@email.com",
-                    LeadStatus.CANCELED
-            );
-            leadRepository.insert(lead);
-        };
-    }
+//    @Bean
+//    CommandLineRunner commandLineRunner (LeadRepository leadRepository){
+//        return args -> {
+//            Lead lead = new Lead(
+//                    "Felipe",
+//                    "luis.felipe@email.com",
+//                    LeadStatus.CANCELED
+//            );
+//            leadRepository.insert(lead);
+//        };
+//    }
 }

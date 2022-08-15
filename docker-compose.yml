@@ -3,16 +3,16 @@ services:
   web-mkt:
     image: java
     container_name: web-mkt
-    volumes:
-      - ./:/app
-    working_dir: /app
-    command: ./mvnw package
-    environment:
-      SERVER_PORT: 8085
-      RABBITMQ_HOST: 'rabbitmq'
-      RABBITMQ_PORT: 5672
-      RABBITMQ_USERNAME: guest
-      RABBITMQ_PASSWORD: guest
+#    volumes:
+#      - ./:/app
+#    working_dir: /app
+#    command: ./mvnw package
+#    environment:
+#      SERVER_PORT: 8085
+#      RABBITMQ_HOST: 'localhost'
+#      RABBITMQ_PORT: 5672
+#      RABBITMQ_USERNAME: admin
+#      RABBITMQ_PASSWORD: admin
     ports:
       - 3000:3000
     depends_on:
@@ -31,9 +31,18 @@ services:
       MONGO_INITDB_DATABASE: mkt
   rabbitmq:
     container_name: rabbitmq-mkt
-    image: rabbitmq
+    image: rabbitmq:3-management
+    restart: always
+#    Portas para acesso de protocolos AMQP e Painel do rabbit
     ports:
       - 5672:5672
+      - 15672:15672
+#    persistencia de dados caso o cotainer morra
+    volumes:
+      - /docker_conf/rabbitmq/data/:/var/lib/rabbitmq/
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin
   mongo-express:
     image: mongo-express
     container_name: mongo-express
