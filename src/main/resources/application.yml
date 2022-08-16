@@ -5,12 +5,12 @@ spring:
     mongodb:
       database: mongo-mkt
       port: 27017
-      host: localhost
+      host: mongo-mkt
       authentication-database: admin
       username: mkt-usuario
       password: mkt-senha
   rabbitmq:
-    host: localhost
+    host: rabbitmq-mkt
     port: 5672
     password: admin
     username: admin

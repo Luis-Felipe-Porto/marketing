@@ -29,7 +29,7 @@ public class LeadSevice {
     }
     public void converterLead(String email){
         Lead lead = buscarPorEmail(email);
-        lead.convert();
+//        lead.convert();
         leadRepository.insert(lead);
     }
 }

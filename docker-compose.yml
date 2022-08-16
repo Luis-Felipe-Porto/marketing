@@ -1,20 +1,24 @@
 version: '3.7'
 services:
   web-mkt:
-    image: java
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: marketing:0.0.1
     container_name: web-mkt
+    restart: always
 #    volumes:
 #      - ./:/app
 #    working_dir: /app
-#    command: ./mvnw package
-#    environment:
+#    command: ./mvnw install -DskipTests
+    environment:
 #      SERVER_PORT: 8085
-#      RABBITMQ_HOST: 'localhost'
+      SPRING_RABBITMQ_HOST: rabbitmq-mkt
 #      RABBITMQ_PORT: 5672
 #      RABBITMQ_USERNAME: admin
 #      RABBITMQ_PASSWORD: admin
     ports:
-      - 3000:3000
+      - 8086:8086
     depends_on:
       - rabbitmq
       - mongo-mkt
