@@ -19,6 +19,7 @@ public class LeadSevice {
     }
 
     public Lead salvar(Lead lead){
+        lead.convert();
         return leadRepository.insert(lead);
     }
     public Page<Lead> buscarLeads(Pageable pageable){
