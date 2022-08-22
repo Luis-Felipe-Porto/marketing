@@ -5,11 +5,12 @@ import org.springframework.amqp.core.AmqpAdmin;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.core.Queue;
+import org.springframework.stereotype.Component;
 
 
 import javax.annotation.PostConstruct;
 
-//@Component
+@Component
 public class RabbitMQConection {
     private String NOME_EXCHANGE = "amq.direct";
     private AmqpAdmin amqpAdmin;
