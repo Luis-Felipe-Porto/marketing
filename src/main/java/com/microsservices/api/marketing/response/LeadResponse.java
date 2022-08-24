@@ -20,7 +20,6 @@ public record LeadResponse(LeadSevice leadSevice, RabbitmqService rabbitmqServic
     }
     @PostMapping
     public Lead postLead(@RequestBody Lead lead){
-        rabbitmqService.enviaMensagem(RabbitMQConstantes.FILA_MARKETING,lead);
         return leadSevice.salvar(lead);
     }
     @GetMapping("/buscarPorEmail")

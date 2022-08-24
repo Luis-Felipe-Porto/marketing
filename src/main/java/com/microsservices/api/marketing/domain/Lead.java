@@ -29,6 +29,7 @@ public class Lead implements Serializable {
     public Lead(String nome, String email) {
         this.nome = nome;
         this.email = email;
+        this.leadStatus = LeadStatus.INTERESTED;
     }
 
     public Lead() {
