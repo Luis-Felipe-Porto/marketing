@@ -1,11 +1,8 @@
-echo "------------------ Down"
-docker-compose down
-
 echo "------------------ maven Build image"
-
+./mvnw package -DskipTests
 
 echo "------------------ Build"
-docker-compose build
+docker-compose buildgiotn
 
 echo "------------------ Run"
-docker-compose up -d --build
+docker-compose up -d

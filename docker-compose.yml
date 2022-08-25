@@ -34,7 +34,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: mkt-senha
       MONGO_INITDB_DATABASE: mkt
   rabbitmq:
-    container_name: rabbitmq-mkt
+    container_name: rabbitmq
     image: rabbitmq:3-management
     restart: always
 #    Portas para acesso de protocolos AMQP e Painel do rabbit
