@@ -13,10 +13,10 @@ services:
 #    command: ./mvnw install -DskipTests
     environment:
 #      SERVER_PORT: 8085
-      SPRING_RABBITMQ_HOST: rabbitmq-mkt
-#      RABBITMQ_PORT: 5672
-#      RABBITMQ_USERNAME: admin
-#      RABBITMQ_PASSWORD: admin
+      SPRING_RABBITMQ_HOST: rabbitmq
+      RABBITMQ_PORT: 5672
+      RABBITMQ_USERNAME: admin
+      RABBITMQ_PASSWORD: admin
     ports:
       - 8086:8086
     depends_on:
@@ -41,9 +41,9 @@ services:
     ports:
       - 5672:5672
       - 15672:15672
-#    persistencia de dados caso o cotainer morra
-    volumes:
-      - /docker_conf/rabbitmq/data/:/var/lib/rabbitmq/
+#    persistencia de dados caso o container
+#    volumes:
+#      - /docker_conf/rabbitmq/data/:/var/lib/rabbitmq/
     environment:
       - RABBITMQ_DEFAULT_USER=admin
       - RABBITMQ_DEFAULT_PASS=admin

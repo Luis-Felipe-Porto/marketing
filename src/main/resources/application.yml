@@ -10,7 +10,7 @@ spring:
       username: mkt-usuario
       password: mkt-senha
   rabbitmq:
-    host: rabbitmq-mkt
+    host: rabbitmq
     port: 5672
     password: admin
     username: admin
