@@ -12,8 +12,9 @@ services:
 #    working_dir: /app
 #    command: ./mvnw install -DskipTests
     environment:
-#      SERVER_PORT: 8085
+#     SERVER_PORT: 8085
       SPRING_RABBITMQ_HOST: rabbitmq
+      MONGO_DATABASE_HOST: mongo-mkt
       RABBITMQ_PORT: 5672
       RABBITMQ_USERNAME: admin
       RABBITMQ_PASSWORD: admin
