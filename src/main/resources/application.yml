@@ -1,5 +1,5 @@
 server:
-  port: 8086
+  port: 0
 spring:
   data:
     mongodb:
@@ -14,3 +14,11 @@ spring:
     port: 5672
     password: admin
     username: admin
+  application:
+    name: marketing
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
